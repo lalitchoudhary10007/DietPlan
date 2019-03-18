@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DietPlan</string>
     <string name="notification_channel_description">Diet_plan</string>
+    <string name="some_error">Error</string>
+    <string name="connection_error">No Connection</string>
+    <string name="api_default_error">Api Default Error</string>
+    <string name="api_retry_error">Api Retry Error</string>
 </resources>

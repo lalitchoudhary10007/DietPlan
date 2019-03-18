@@ -17,7 +17,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/locationName"
+                android:id="@+id/foodName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -26,7 +26,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/locationAddress"
+                android:id="@+id/foodTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
