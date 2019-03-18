@@ -75,26 +75,26 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
     }
 
     @Override
-    public void SetReminder(MainActivity mainActivity, String food, int dayType, int hour, int min) {
+    public void SetReminder(MainActivity mainActivity, String food, int type, int hour, int min, int duration) {
 
-        Log.e("Reminder Value" , ""+getDataManager().GetRemindervalue());
 
         if(getDataManager().GetRemindervalue() == false){
-            setNotification(mainActivity, food , dayType , hour , min);
+            setNotification(mainActivity, food , type , hour , min, duration);
         }
 
     }
 
 
-    public void setNotification(Activity context, String reason , int day , int hour, int minute) {
+    public void setNotification(Activity context, String reason , int day , int hour, int minute, int duration) {
 
         //------------  alarm settings start  -----------------//
-        Log.e("Notification Set"+reason+ day , ""+hour + minute);
+        Log.e("Notification Set"+reason+ day + duration , ""+hour + minute);
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_WEEK, day);
         calendar.set(Calendar.HOUR_OF_DAY, hour);
-        calendar.set(Calendar.MINUTE, minute - 5);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.add(Calendar.MINUTE , -5);
         long sd1 = calendar.getTimeInMillis();
 
         long currentTimeMillis = Calendar.getInstance().getTimeInMillis();
@@ -108,7 +108,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
 
             int _id = (int) System.currentTimeMillis();
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context, _id, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, sd1, 24 * 7 * 60 * 60 * 1000, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, sd1, 24 * duration * 60 * 60 * 1000, pendingIntent);
 
         }
 

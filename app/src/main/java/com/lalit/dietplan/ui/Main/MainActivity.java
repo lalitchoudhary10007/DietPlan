@@ -59,6 +59,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         JSONObject js = null;
         try {
             js = response.getJSONObject("week_diet_data");
+            int diet_duration = response.getInt("diet_duration");
             ArrayList<String> weekdays = new ArrayList<String>();
             Iterator<String> keys = js.keys();
             while (keys.hasNext()){
@@ -100,7 +101,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
                         break;
                  }
 
-                mPrsenter.SetReminder(this, food , dayType , Integer.parseInt(hour), Integer.parseInt(min));
+                mPrsenter.SetReminder(this, food , dayType , Integer.parseInt(hour), Integer.parseInt(min), diet_duration);
 
                 }
 

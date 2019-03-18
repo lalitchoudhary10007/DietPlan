@@ -8,7 +8,7 @@ public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V>
 
     void LoadData();
 
-    void SetReminder(MainActivity mainActivity, String food, int dayType, int i, int parseInt);
+    void SetReminder(MainActivity mainActivity, String food, int type, int hour, int min, int duration);
 
 
 }
