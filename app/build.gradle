@@ -19,16 +19,12 @@ android {
             debug {
                 buildConfigField("String", "BASE_URL", "\"http://104.196.113.9/\"")
                 buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
-//                buildConfigField("String", "public_key", "\"apporio\"")
-//                buildConfigField("String", "secret_key", "\"infolabs\"")
+
             }
             release {
                 minifyEnabled false
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//                buildConfigField("String", "BASE_URL", "\"http://apporiodoctor.getsandbox.com/\"")
-//                buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
-//                buildConfigField("String", "public_key", "\"apporio\"")
-//                buildConfigField("String", "secret_key", "\"infolabs\"")
+
             }
         }
 
